@@ -1,5 +1,11 @@
 package conf
 
+import (
+	"io/ioutil"
+
+	"gopkg.in/yaml.v3"
+)
+
 type conf struct {
 	Server server `yaml:"server"`
 	Db     db     `yaml:"db"`
@@ -33,4 +39,21 @@ type myLog struct {
 type cache struct {
 	Expire  int `yaml:"expire"`
 	Clearup int `yaml:"clearup"`
+}
+
+var Conf *conf
+
+// 配置初始化
+func init(){
+	yamlFile, err := ioutil.ReadFile("../conf.yaml")
+
+	if err != nil {
+		panic(err)
+	}
+
+	err = yaml.Unmarshal(yamlFile, &Conf)
+
+	if err != nil {
+		panic(err)
+	}
 }
