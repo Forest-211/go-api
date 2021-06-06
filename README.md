@@ -32,3 +32,5 @@ lin-service
 > - github.com/rifflock/lfshook // 日志勾子
 > - github.com/sirupsen/logrus // 日志
 > - gopkg.in/yaml.v3 // yaml 配置
+
+> cache 内存型缓存 存token
