@@ -3,6 +3,7 @@ package main
 import (
 	"blog/conf"
 	"blog/db"
+	"blog/router"
 	"blog/utils"
 	"context"
 	"net/http"
@@ -20,10 +21,12 @@ func main() {
 
 	gin.SetMode(conf.Conf.Server.Model)
 
-	// TODO：路由
+	// 路由
+	router := router.InitRouter()
 
 	srv := &http.Server{
-		Addr: conf.Conf.Server.Address,
+		Addr:    conf.Conf.Server.Address,
+		Handler: router,
 	}
 
 	go func() {
