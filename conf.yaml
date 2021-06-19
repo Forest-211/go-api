@@ -4,8 +4,8 @@ server:
 
 db:
   dialects: mysql
-  host: 127.0.0.1
-  port: 3306
+  host: 119.3.48.150
+  port: 12306
   db: blog
   username: root
   password: 123456
