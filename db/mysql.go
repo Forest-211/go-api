@@ -5,7 +5,7 @@ import (
 	"blog/utils"
 	"fmt"
 
-	"gorm.io/gorm"
+	"github.com/jinzhu/gorm"
 )
 
 var Db *gorm.DB
